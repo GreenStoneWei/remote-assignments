@@ -2,72 +2,89 @@
 <html>
   <head>
     <title>First Week Assignment</title>
-    <link rel="stylesheet" href="CSS/normalize.css">
-    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style_flex.css">
   </head>
   <body>
+    <div class="navicon clearfix">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+    <div class="body">
     <header class="main-navbar">
-      <div class="wrapper clearfix">
-        <h1 class="logo">Logo</h1>
+      <div class="wrapper">
+        <img class="logo" src="img/earth_logo.svg">
         <ul class="nav">
           <li><a href="#">Item 1</a></li>
           <li><a href="#">Item 2</a></li>
           <li><a href="#">Item 3</a></li>
           <li><a href="#">Item 4</a></li>
         </ul>
+
+        <!-- <select>
+          <option value="" selected="selected">Selected</option>
+          <option value="#">Item 1</option>
+          <option value="#">Item 2</option>
+          <option value="#">Item 3</option>
+          <option value="#">Item 4</option>
+        </select> -->
       </div>
     </header>
 
     <div class="main-header">
         <h1 class="banner">Welcome to Stone's First Assignment</h1>
-      </div>
-
-      <div class="container">
-        <h2>Section Title</h2>
-        <div class="group">
-          <div class="contentbox t-border">
-            <div class="col first">
-              <h3>Content BOX 1</h3>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-              </p>
-            </div>
-          </div>
-
-          <div class="contentbox t-border">
-            <div class="col second">
-              <h3>Content BOX 2</h3>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-              </p>
-            </div>
-          </div>
-
-          <div class="contentbox t-border">
-            <div class="col third">
-              <h3>Content BOX 3</h3>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-              </p>
-            </div>
-          </div>
-
-          <div class="contentbox t-border">
-            <div class="col four">
-              <h3>Content BOX 4</h3>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="calltoaction">
-          <span>Call to Action</span>
-        </div>
-      </div>
     </div>
+    <div class="container">
+      <h2>Section Title</h2>
+      <!-- Beginning of Content BOX -->
+      <div class="row">
+        <!-- Content Box1 -->
+        <div class="col-1 col t-border">
+          <div>
+          <h3>Content BOX 1</h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          </p>
+          </div>
+        </div> <!-- col-1 col -->
+        <!-- Content Box2 -->
+        <div class="col-2 col t-border">
+          <div>
+          <h3>Content BOX 2</h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          </p>
+          </div>
+        </div> <!-- col-2 col -->
+        <!-- Content Box3 -->
+        <div class="col-3 col t-border">
+          <div>
+          <h3>Content BOX 3</h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          </p>
+          </div>
+        </div> <!-- col-3 col -->
+        <!-- Content Box4 -->
+        <div class="col-4 col t-border">
+          <div>
+          <h3>Content BOX 4</h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          </p>
+          </div>
+        </div> <!-- col-4 col -->
+      </div> <!-- End of Row -->
+        <!-- call to action -->
+        <div class="button">
+          <a class="cta" href="#">Call to Action</a>
+        </div>
+      </div> <!-- End of Container -->
+    <!-- footer -->
     <footer class="main-footer">
       <span> &copy 2019 </span>
     </footer>
+    </div><!-- End of class body -->
   </body>
 </html>
