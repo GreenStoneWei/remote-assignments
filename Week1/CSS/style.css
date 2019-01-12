@@ -1,0 +1,134 @@
+
+/* Base Element Style */
+
+.landing {
+  font-size: 3em;
+  color: white;
+  text-align: center;
+}
+
+body {
+  font-family: Helvetica, Arial;
+  line-height: 1.5;
+  text-align: center;
+  color: #878787;
+}
+
+p {
+  font-size: 20px;
+}
+
+/* navigation */
+.logo {
+  font-size: 1.25em;
+}
+
+.logo,
+.nav li{
+  text-align: center;
+  background: #fff;
+  margin-top: 6px;
+  margin-bottom: 6px;
+}
+
+.nav{
+  font-size: 0.9em;
+  color: #3acec2;
+}
+
+/* Layout Container */
+
+.container{
+  width: 70%;
+  margin: 0 auto;
+}
+
+.main-header {
+  background-color: #20b2aa; /*#00ced1*/
+  height: 400px;
+}
+
+.contentbox{
+  max-width: 600px;
+  background-color: #dcdcdc;
+}
+.t-border{
+  padding: 10px;
+  margin: 20px;
+}
+
+.group{
+  text-align: center;
+}
+
+.main-footer{
+  text-align: center;
+  padding: 2em 0;
+  background: #d9e4ea;
+}
+
+
+/* floated columns */
+/* .float1,
+.float2,
+.float3,
+.float4{
+  width: 50%;
+}
+
+.float1,
+.float3{
+  float: left;
+}
+.float2,
+.float4{
+  float: right;
+} */
+
+/* ----- Media Queris ----- */
+
+/* @media (min-width: 1200px) { */
+
+  .logo,
+  .nav,        /* 93 and 94 how they are different??? */
+  .nav li{
+    display: inline-block;
+  }
+
+  .nav{
+    float: right;
+  }
+  .logo {
+    float: left;
+  }
+
+  .col{
+    display: inline-block;
+    width: 50%;
+    margin-right: -5px;
+    vertical-align: top;
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+
+  /* float clearfix */
+
+  .group:after{
+    content: "";
+    display: table;
+    clear: both
+  }
+
+}
+
+
+
+/*
+.wildlife{
+  background-image: url(img/bear.jpg)
+}
+
+/* pseudo class */
+
+
+/* media query  */
