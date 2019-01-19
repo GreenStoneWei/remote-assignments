@@ -1,0 +1,279 @@
+/* --- Basic and Universal Style */
+* {
+  box-sizing: border-box;
+}
+body {
+  min-height: 100vh;
+  font-family: Helvetica, Arial;
+  line-height: 1.5;
+  text-align: center;
+  color: #878787;
+}
+.body{
+  display: flex;
+  flex-direction: column;
+}
+.navicon{
+  position: fixed;
+  top: 30px;
+  right: 40px;
+  display: flex;
+  flex-direction: column;
+  float: right;
+  z-index: 2;
+}
+.bar {
+  width: 35px;
+  height: 5px;
+  background-color: black;
+  border-radius: 3px;
+  margin: 2.5px 0;
+}
+.row{
+  flex: 1;
+  justify-content: center;
+}
+
+p {
+  font-size: 20px;
+}
+
+/* --- Navigation Bar--- */
+.logo {
+  width: 50px;
+  margin: 0;
+}
+.nav{
+  margin-top: 5px;
+}
+.logo a,
+.nav a{
+  display: block;
+  text-align: center;
+  padding: 10px 15px;
+}
+.nav a{
+  font-size: 0.9em;
+  color: #3acec2;
+  text-decoration: none;
+}
+.nav a:hover{
+  font-size: 0.9em;
+  color: #093a58;
+}
+
+.main-navbar{
+  position: fixed;
+  background: #fff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+  top: 0;
+  z-index: 1;
+}
+
+.nav li{
+  text-align: center;
+  background: #fff;
+  margin:auto;
+}
+
+
+.main-header {
+  background-color: #20b2aa;
+  height: 400px;
+}
+.banner {
+  font-size: 7vmin;
+  color: white;
+  text-align: center;
+  padding-top: 2.5em;
+}
+
+
+/* Layout Container */
+
+.container{
+  width: 100%;
+  margin: 0 auto;
+}
+
+.t-border{
+  padding: 10px;
+  margin: 5px;
+}
+
+.button{
+  display: flex;
+  height: 60px;
+  width: 120px;
+  background-color: #FA8072;
+  border-radius: 10px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.cta{
+  font-size: 1.1em;
+  color: #000;
+  text-align: center;
+  text-decoration: none;
+  margin: auto;
+}
+
+/* --- Footer Style ---- */
+
+.main-footer{
+  text-align: center;
+  padding: 0.5em 0;
+  background: #d9e4ea;
+}
+
+
+/* ----- Media Queries ----- */
+
+@media (min-width: 1200px) {
+  .main-navbar{
+    width: 100%;
+  }
+  .wrapper{
+    width: 90%;
+    margin: 0 auto;
+  }
+  /* .wrapper select{
+    display: none;
+  } */
+  .wrapper,
+  .nav,
+  .row{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .wrapper{
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .row > div{
+    justify-content: center;
+    flex-direction: column;
+  }
+  .row > div > div{
+    justify-content: center;
+    flex-direction: row;
+  }
+  .col{
+    max-width: 550px;
+    background-color: #dcdcdc;
+  }
+  .navicon{
+    display: none;
+  }
+}
+@media (min-width: 800px) and (max-width: 1199px) {
+  .main-navbar{
+    width: 100%;
+  }
+  .wrapper{
+    width: 90%;
+    margin: 0 auto;
+  }
+  /* .wrapper select{
+    display: none;
+  } */
+  .wrapper,
+  .nav,
+  .row{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .wrapper{
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .row > div{
+    width: calc(100vw/2 - 50px);
+    justify-content: center;
+    flex-direction: column;
+  }
+  .row > div > div{
+    justify-content: center;
+    flex-direction: row;
+  }
+  .col{
+    flex-wrap: wrap;
+    color: #fff;
+    background-color: #4682B4;
+  }
+  .navicon{
+    display: none;
+  }
+}
+@media (min-width: 500px) and (max-width: 799px) {
+
+  .main-navbar{
+    width: 100%;
+  }
+  .wrapper{
+    width: 90%;
+    margin: 0 auto;
+  }
+  .wrapper ul{
+    display: none;
+  }
+  .wrapper,
+  .nav,
+  .row{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .wrapper{
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .row > div{
+    width: calc(100vw/2 - 50px);
+    justify-content: center;
+    flex-direction: column;
+  }
+  .row > div > div{
+    justify-content: center;
+    flex-direction: row;
+  }
+  .col{
+    flex-wrap: wrap;
+    color: #fff;
+    background-color: #dcdcdc;
+  }
+}
+@media (max-width: 499px) {
+  .main-navbar{
+    width: 100%;
+  }
+  .wrapper{
+    width: 90%;
+    margin: 0 auto;
+  }
+  .wrapper ul{
+    display: none;
+  }
+  .wrapper,
+  .nav,
+  .row{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .wrapper{
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .row > div{
+    width: auto;
+    justify-content: center;
+    flex-direction: column;
+    margin: 2.5px 10px 2.5px 10px;
+  }
+  .col{
+    flex-wrap: wrap;
+    color: #fff;
+    background-color: #4682B4;
+  }
+}

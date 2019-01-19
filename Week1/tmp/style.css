@@ -1,0 +1,186 @@
+/* --- Basic and Universal Style */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Helvetica, Arial;
+  line-height: 1.5;
+  text-align: center;
+  color: #878787;
+}
+
+/* --- Navigation Bar--- */
+.main-navbar{
+  position: fixed;
+  background: #fff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  top: 0;
+  z-index: 1;
+}
+
+/* Here needs to be adjusted with media Queries */
+.wrapper{
+  width: 80%;
+  margin: 0 auto;
+}
+.logo {
+  font-size: 1.25em;
+  margin: 0;
+}
+
+.nav{
+  margin-top: 5px;
+}
+
+.logo a,
+.nav a{
+  display: block;
+  text-align: center;
+  padding: 10px 15px;
+}
+
+.nav a{
+  font-size: 0.9em;
+  color: #3acec2;
+  text-decoration: none;
+}
+.nav a:hover{
+  font-size: 0.9em;
+  color: #093a58;
+}
+
+.logo,
+.nav li{
+  text-align: center;
+  background: #fff;
+  margin-top: 6px;
+  margin-bottom: 6px;
+}
+
+
+.main-header {
+  background-color: #20b2aa;
+  height: 400px;
+}
+.banner {
+  font-size: 3.25em;
+  color: white;
+  text-align: center;
+  padding-top: 3em;
+}
+
+/* Base Element Style */
+
+
+p {
+  font-size: 20px;
+}
+
+
+/* Layout Container */
+
+.container{
+  width: 70%;
+  margin: 0 auto;
+}
+
+
+.contentbox{
+  max-width: 600px;
+  background-color: #dcdcdc;
+}
+.t-border{
+  padding: 10px;
+  margin: 20px;
+}
+
+.group{
+  text-align: center;
+}
+
+/* --- Footer Style ---- */
+
+.main-footer{
+  text-align: center;
+  padding: 0.5em 0;
+  background: #d9e4ea;
+}
+
+
+/* floated columns */
+/* .float1,
+.float2,
+.float3,
+.float4{
+  width: 50%;
+}
+
+.float1,
+.float3{
+  float: left;
+}
+.float2,
+.float4{
+  float: right;
+} */
+
+/* ----- Media Queries ----- */
+
+/* @media (min-width: 1200px) { */
+
+  .logo,
+  .nav,        /* 93 and 94 how they are different??? */
+  .nav li{
+    display: inline-block;
+  }
+
+  .nav{
+    float: right;
+  }
+  .logo {
+    float: left;
+  }
+
+  .col{
+    display: inline-block;
+    width: 50%;
+    margin-right: -5px;
+    vertical-align: top;
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+
+  /* float clearfix */
+
+  .group:after{
+    content: "";
+    display: table;
+    clear: both
+  }
+
+}
+
+
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+
+/*
+.wildlife{
+  background-image: url(img/bear.jpg)
+}
+
+/* pseudo class */
+
+
+/* media query  */
+
+@media () {
+
+}
