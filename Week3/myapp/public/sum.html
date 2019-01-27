@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> 3. Sum </title>
+  </head>
+  <body>
+    <script>
+      function toGetData() {
+        var xhr = new XMLHttpRequest();
+        var userInput = document.getElementById("userInput").value
+        xhr.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+          document.getElementById("switch").innerHTML = this.responseText;
+          }
+        };
+        xhr.open("GET", "/getData?number=" + userInput , true);
+        xhr.send();
+}
+    </script>
+
+    <h2>Use AJAX to callback getData</h2>
+    <div id="switch">
+      <input type="text" id="userInput">
+      <button type="button" onclick="toGetData()">Calculate</button>
+    </div>
+  </body>
+</html>
