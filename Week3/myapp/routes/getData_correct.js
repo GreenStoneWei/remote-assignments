@@ -4,6 +4,7 @@ const router = express.Router();
 router.get('/', (req, res) => {
   var number = req.query.number;
   number = number * 1;
+  // *1 or + or parseInt() to convert string to number
   function isEmpty(obj) {
     for(let key in obj) {
       if(obj.hasOwnProperty(key))

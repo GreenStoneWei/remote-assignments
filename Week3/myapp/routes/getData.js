@@ -3,6 +3,7 @@ const router = express.Router();
 
 router.get('/', (req, res) => {
   var number = req.query.number;
+  number = number * 1;
   function isEmpty(obj) {
     for(let key in obj) {
       if(obj.hasOwnProperty(key))
@@ -10,10 +11,6 @@ router.get('/', (req, res) => {
       }
     return true;
   }
-  // console.log('req.query= ' + req.query);
-  // console.log('req.query.number= ' + number);
-  // console.log(typeof(number));
-  // console.log(number);
   if (isEmpty(req.query)){
     res.send('<h2>Lack of Parameter</h2>');
     }
