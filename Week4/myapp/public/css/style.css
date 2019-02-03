@@ -1,0 +1,35 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  min-height: 100vh;
+  font-family: Helvetica, Arial;
+  line-height: 1.5;
+  text-align: center;
+  color: #0C2233;
+}
+.body{
+  display: flex;
+  flex-direction: column;
+}
+
+.headline {
+  font-size: 2em;
+  color: black;
+  text-align: center;
+  position: relative;
+  padding: 20px 24px 20px 24px;
+}
+.pList{
+  justify-content: center;
+  margin: 0 auto;
+}
+.col{
+  display: inline-block;
+  height: 250px;
+  width: 350px;
+  background-color: #F0D9CF;
+  padding: 40px 10px;
+  margin: 10px;
+  text-align: left;
+  }

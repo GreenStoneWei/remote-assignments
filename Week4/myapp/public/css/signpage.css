@@ -1,0 +1,51 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  min-height: 100vh;
+  font-family: Helvetica, Arial;
+  line-height: 1.5;
+  text-align: center;
+  color: #0C2233;
+}
+#body{
+width: 100%;
+}
+
+#headline {
+  font-size: 2em;
+  color: black;
+  text-align: center;
+  position: relative;
+}
+
+#signBox{
+  margin-bottom: 25px;
+}
+
+#signBox div{
+  display: inline-block;
+}
+
+.signUp,
+.signIn{
+  color: gray;
+}
+
+.signUp:hover,
+.signIn:hover{
+  color: blue;
+  cursor: pointer;
+}
+
+#signUpForm,
+#signInForm{
+  margin: 0 auto;
+  width: 250px;
+}
+
+.alignRight{
+  display: block;
+  text-align: right;
+  margin: 10px 0px;
+}
