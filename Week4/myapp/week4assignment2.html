@@ -7,14 +7,13 @@
   <body>
       <script src="week4assignment1.js"></script>
       <script>
-      var productList;
-
+      // var productList;
       function ajax(src, callback){
         var xhr = new XMLHttpRequest();
         xhr.onreadystatechange = function(){
           if (this.readyState == 4){
-            productList = JSON.parse(xhr.responseText);
-            callback();
+            var yaaa = JSON.parse(xhr.responseText);
+            callback(yaaa);
           }
         };
         xhr.open('GET', src);
@@ -22,7 +21,7 @@
       }
 
       function render(data){
-        var numOfProduct = productList.length;
+        var numOfProduct = data.length;
         var bckgrndForPrdct = '';
         for (let i = 0; i < numOfProduct ; i +=1 ){
           bckgrndForPrdct += '<div class="col' + ' col'+ [i]+ '"' + '></div>';
@@ -32,9 +31,9 @@
         // Create background for products
 
         for (let i = 0; i < numOfProduct ; i +=1 ){
-          for (var prop in productList[i]){
+          for (var prop in data[i]){
             var node = document.createElement("LI");
-            var textnode = document.createTextNode(prop + ": " + productList[i][prop]);
+            var textnode = document.createTextNode(prop + ": " + data[i][prop]);
             // var descriptNode = document.createElement("P");
             // var descriptTextNode = document.createTextNode(productList[i][prop]);
             node.appendChild(textnode);
