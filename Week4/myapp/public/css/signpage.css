@@ -27,13 +27,13 @@ width: 100%;
   display: inline-block;
 }
 
-.signUp,
-.signIn{
+.signUpBtn,
+.signInBtn{
   color: gray;
 }
 
-.signUp:hover,
-.signIn:hover{
+.signUpBtn:hover,
+.signInBtn:hover{
   color: blue;
   cursor: pointer;
 }
@@ -48,4 +48,8 @@ width: 100%;
   display: block;
   text-align: right;
   margin: 10px 0px;
+}
+
+.hidden{
+  display: none;
 }

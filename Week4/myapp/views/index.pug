@@ -1,0 +1,36 @@
+doctype html
+html
+  head
+    title  Homepage
+    link(rel='stylesheet', href='/css/signpage.css')
+  body
+    script.
+      function getSignUp() {
+      var xhr = new XMLHttpRequest();
+      xhr.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("signArea").innerHTML = this.responseText;
+      }
+      };
+      xhr.open("GET", "registerForAjax.html");
+      xhr.send();
+      }
+      function getSignIn() {
+      var xhr = new XMLHttpRequest();
+      xhr.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("signArea").innerHTML = this.responseText;
+      }
+      };
+      xhr.open("GET", "loginForAjax.html");
+      xhr.send();
+      }
+    #body
+      h2#headline This is the homepage
+      #signBox
+        .signUpBtn(onclick='getSignUp()')
+          b Sign Up
+        div |
+        .signInBtn(onclick='getSignIn()')
+          b Sign In
+      #signArea

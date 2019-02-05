@@ -10,16 +10,16 @@ var con = mysql.createConnection({
   database: "assignment"
 });
 
-router.get('/register', (req, res) => {
-  var emailUp = req.query.emailUp;
-  var pwdUp = req.query.pwdUp;
+router.post('/register', (req, res) => {
+  var emailUp = req.body.emailUp;
+  var pwdUp = req.body.pwdUp;
 
   function validateEmail(email) {
-  var regex = /\S+@\S+\.\S+/;
-  return regex.test(email);
+    var regex = /\S+@\S+\.\S+/;
+    return regex.test(email);
   };
 
-  function checkRegisteredEmail(email){
+  function countEmail(email, callback){
     let sql = `SELECT COUNT(*) AS count FROM user WHERE email = '${email}';`;
     con.query( sql, function(err, result) {
       if (err) {
@@ -27,35 +27,36 @@ router.get('/register', (req, res) => {
       } else {
           var resultString = JSON.parse(JSON.stringify(result));
           var rowCount = resultString[0].count * 1;
+          // console.log(rowCount);
+          callback(rowCount);
         }
-      console.log(rowCount);
-      // return rowCount;
-      if (rowCount > 0){
-        return true;
-      }
-      return false;
     }) // End of con.query
   };
 
-  if (!validateEmail(emailUp)) {
-    res.send("Oops, this doesn't look like an email address"); // The error message should popup right below the input box. TO DO: use pug??
-  } else if (pwdUp.length < 4){
-    res.send("The password must have at least 4 characters");
-  } else if ( checkRegisteredEmail(emailUp) ){
-    res.send("Sorry, this email has been registerd.");
-  } else {
-    let sql = `INSERT INTO user (email, password) VALUES ('${emailUp}', '${pwdUp}')`;
-    con.query( sql, function (err, result) {
-      if (err) throw err;
-      console.log('1 user registered.');
-      res.redirect('/member');
-    })
-  } // End of else
-});
+  function submit(row){
+        if (!validateEmail(emailUp)) {
+          res.render('regiserr', { errmsg: "Oops, this doesn't look like an email address"});
+        } else if (pwdUp.length < 4){
+          res.render('regiserr', { errmsg: "The password must have at least 4 characters"});
+        } else if ( row > 0 ){
+          res.render('regiserr', { errmsg: "Sorry, this email has been registerd."});
+        } else {
+          let sql = `INSERT INTO user (email, password) VALUES ('${emailUp}', '${pwdUp}')`;
+          con.query( sql, function (err, result) {
+            if (err) throw err;
+            console.log('1 user registered.');
+            res.redirect('/member');
+          })
+        } // End of else
+    }
+  countEmail(emailUp,function(x){
+    submit(x);
+  });
+}); // End of router get
 
-router.get('/login', (req, res) => {
-  var emailIn = req.query.emailIn;
-  var pwdIn = req.query.pwdIn;
+router.post('/login', (req, res) => {
+  var emailIn = req.body.emailIn;
+  var pwdIn = req.body.pwdIn;
 
   function isEmpty(obj) {
     for(let key in obj) {
@@ -70,7 +71,7 @@ router.get('/login', (req, res) => {
     if (err) throw err;
     var resultString = JSON.parse(JSON.stringify(result));
     if (isEmpty(resultString)) {
-      res.send("Sorry, invalid email or password.")
+      res.render('loginerr', { errmsg: "Sorry, invalid email or password."});
     } else {
       res.redirect('/member');
     }
@@ -89,4 +90,3 @@ con.connect(function(err) {
 });
 
 module.exports = router;
-// module.exports = con;

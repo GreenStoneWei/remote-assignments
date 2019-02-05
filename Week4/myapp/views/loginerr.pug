@@ -1,0 +1,25 @@
+doctype html
+html
+  head
+    title  Homepage
+    link(rel='stylesheet', href='/css/signpage.css')
+  body
+    #body
+      h2#headline This is the homepage
+      #signBox
+        .signUp
+          b Sign Up
+        div |
+        .signIn
+          b Sign In
+      #signArea
+        form#signUpForm(action='/login', method='POST')
+          .alignRight
+            lable(for='emailIn') Email
+            input(type='text', name='emailIn')
+          .alignRight
+            lable(for='psIn') Password
+            input(type='text', name='pwdIn')
+          input(type='submit', value='Sign In')
+      footer
+        h3= errmsg
